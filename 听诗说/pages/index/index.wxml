@@ -1,0 +1,32 @@
+<!--index.wxml-->
+
+<view class="container_index">
+  <view>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" ></image>
+      <text class="userinfo-nickname">别来无恙,{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+  <view class="kind-list-item-bd kind-list-item-bd-show">
+    <view class="navigator-box navigator-box-show">
+      <!--<navigator class="navigator"url="">
+        <view class="navigator-text">我的诵读记录</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+      <navigator class="navigator"url="">
+        <view class="navigator-text">学习日历</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+      <navigator class="navigator"url="">
+        <view class="navigator-text">权限设置</view>
+        <view class="navigator-arrow"></view>
+      </navigator>-->
+       <navigator class="navigator"url="">
+        <view class="navigator-text">关于</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+    </view>
+  </view>
+

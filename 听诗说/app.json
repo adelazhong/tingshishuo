@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/poem/poem",
+    "pages/index/index",
+    "pages/ts/ts"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarTitleText": "听诗说",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/poem/poem",
+        "iconPath": "image/book.png",
+        "selectedIconPath": "image/book_selected.png",
+        "text": "读诗"
+      },
+      {
+        "pagePath": "pages/ts/ts",
+        "iconPath": "image/pen.png",
+        "selectedIconPath": "image/pen_selected.png",
+        "text": "写诗"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/about.png",
+        "selectedIconPath": "image/about-selected.png",
+        "text": "我"
+      }
+    ]
+  }
+}

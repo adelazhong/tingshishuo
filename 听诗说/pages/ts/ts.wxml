@@ -1,0 +1,20 @@
+<view class="page-section">
+     <view hidden="{{maskHidden}}" class="weui-cells__title">写诗</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <!--<input class="weui-input" auto-focus placeholder="请写下您的创作" bindinput="bindKeyInput" name="inputValue" value="{{inputValue}}"/>-->
+          <textarea bindinput="bindKeyInput" name="inputValue" value="{{inputValue}}"  style="width:667rpx;height:600rpx;text-align:center;"></textarea>
+        </view>
+      </view>
+       <view class="btn-area" id="buttonContainer">
+          <button type="default" bindtap='formSubmit'>生成海报并分享</button>
+       </view>
+</view>  
+ <view class='imagePathBox' hidden="{{maskHidden == false}}">
+      <image src="{{imagePath}}" class='shengcheng'></image>
+      <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
+    </view>
+   <view hidden="{{maskHidden == false}}" class="mask"></view> 
+  <view class="canvas-box">
+      <canvas  style="width: 375px;height: 500px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+  </view>  

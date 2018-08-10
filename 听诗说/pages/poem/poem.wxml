@@ -1,0 +1,114 @@
+<view class="page-section">
+     <view class="weui-cells__title">搜索 {{inputValue}}</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" auto-focus placeholder="诗名或作者名" bindinput="bindKeyInput" name="inputValue" value="{{inputValue}}"/>
+          <button class="mini-btn" type="default" size="mini" bindtap="search">搜索</button>
+        </view>
+      </view>
+      <view  class="text-poem">
+        <text>{{introduction}}</text>
+      </view>
+       <!--<button type="default" plain="true" class="{{showView?'button_view_show':'button_view_hide'}}">去录音</button>-->
+       <view class="page-section" class="{{showView?'button_view_show':'button_view_hide'}}">
+      
+
+      <block wx:if="{{recording === true}}">
+        
+        <view class="page-body-buttons">
+          <view class="page-body-button"></view>
+          <view class="page-body-button" bindtap="stopRecord">
+            <view class="button-stop-record"></view>
+          </view>
+          <view class="page-body-button"></view>
+        </view>
+        <view class="page-body-time">
+          <text class="time-big">{{formatedRecordTime}}</text>
+        </view>
+      </block>
+
+      <block wx:if="{{hasRecord === true && playing === false}}">
+        <view class="page-body-time">
+          <!--<text class="time-big">{{formatedPlayTime}}</text>-->
+          <text class="time-small">{{formatedRecordTime}}</text>
+        </view>
+        <view class="page-body-buttons">
+          <view class="page-body-button"></view>
+          <view class="page-body-button" bindtap="playVoice">
+            <image src="/image/play.png"></image>
+          </view>
+          <view class="page-body-button" bindtap="clear">
+            <image src="/image/trash.png"></image>
+          </view>
+        </view>
+        <view class="page-body-time">
+          <text class="time-big">{{formatedPlayTime}}</text>
+        </view>
+      </block>
+
+      <block wx:if="{{hasRecord === true && playing === true}}">
+        <view class="page-body-time">
+          <!--<text class="time-big">{{formatedPlayTime}}</text>-->
+          <text class="time-small">{{formatedRecordTime}}</text>
+        </view>
+        <view class="page-body-buttons">
+          <view class="page-body-button" bindtap="stopVoice">
+            <image src="/image/stop.png"></image>
+          </view>
+          <!-- <view class="page-body-button" bindtap="pauseVoice">
+            <image src="/image/pause.png"></image>
+          </view> -->
+          <view class="page-body-button" bindtap="clear">
+            <image src="/image/trash.png"></image>
+          </view>
+        </view>
+        <view class="page-body-time">
+          <text class="time-big">{{formatedPlayTime}}</text>
+        </view>
+      </block>
+      <block wx:if="{{recording === false && playing === false && hasRecord === false}}">
+        <view class="page-body-buttons">
+          <view class="page-body-button"></view>
+          <view class="page-body-button" bindtap="startRecord">
+            <image src="/image/record.png"></image>
+          </view>
+          <view class="page-body-button"></view>
+        </view>
+        <view class="page-body-time">
+          <text class="time-big">{{formatedRecordTime}}</text>
+        </view>
+      </block>
+    </view>
+</view>
+    
+
+<!--<view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <navigator url="pages/{{page}}/{{page}}" class="navigator">
+                  <view class="navigator-text">{{page}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>-->
+ <!--<view class="page-body">
+    <view class="btn-area" id="buttonContainer"> 
+      <view class="button-sp-area">   
+        <button type="default" plain="true" bindtap="gettang">唐诗</button>
+        <button type="default" plain="true" bindtap="getsong">宋诗</button>
+      </view>
+    </view>
+  </view>-->
